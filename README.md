@@ -55,7 +55,7 @@ services:
     shm_size: '4g'
 
     environment:
-      WEBTRAFFIC_GENERATOR_NAME: 'QUIC_Docker'  #should be same as container_name
+      WEBTRAFFIC_GENERATOR_NAME: 'webtraffic_generator'  #should be same as container_name
       WEBTRAFFIC_GENERATOR_RESOLVER: ${R1} # resolver to use (defined in .env file)
       WEBTRAFFIC_GENERATOR_START: '1' #first domain to visit in the domain list
       WEBTRAFFIC_GENERATOR_END: '5000' #last domain to visit in the domain list
@@ -96,7 +96,7 @@ All data is found under the directory defined in the `volumes` tag.
 Unzip the archive (and check the pcap with the SSL key if requested to store it), and process data.
 
 ## Generate docker-compose.yml
-If you want a quick test, use the `docer_compose_gen` script to generate a yaml file. This script is handy when you want to run mulitple instances of the same container.
+If you want a quick test, use the `docker_compose_gen` script to generate a yaml file. This script is handy when you want to run mulitple instances of the same container.
 ```
 $ cd docker_compose_gen/
 $ ./docker_compose_gen.sh -h
