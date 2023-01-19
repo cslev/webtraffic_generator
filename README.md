@@ -12,6 +12,13 @@ encrypted **webtraffic analysis**.
  - the PCAP files are only temporarily stored (due to their size) and decrypted straightaway (using the SSL) keys to parse them, and make a lightweight CSV representation of them
  - at the end, you will have the decrypted traffic as CSV file including all necessary packet header and payload data that you can fed into a Machine learning/Deep learning application 
 
+## Relevant application and base docker version information
+ - debian:bullseye
+ - python3
+ - python3-selenium for firefox scripting
+ - Firefox 109.0
+ - geckodriver v32
+
 # Requirements
 Being a docker container, you have to have a running docker subsystem installed. If you have no such subsystem, first, go to [https://docs.docker.com/install/linux/docker-ce/debian/](https://docs.docker.com/install/linux/docker-ce/debian/), pick your distribution on the left hand side, and follow the instructions to install it.
 
