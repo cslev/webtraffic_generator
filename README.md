@@ -7,9 +7,9 @@ encrypted **webtraffic analysis**.
  - Firefox can be configured to use different encrypted protocols, e.g., QUIC, TCP, encrypted DNS (DNS-over-HTTPS)
  - For DoH, one can configure several different DoH resolver to use
  - The encrypted traffic (along with the SSL keys to decrypt it) is captured within the container
- - The container provides adequate traffic isolation, i.e., no background noise/traffic is captured from your host.
+ - The container provides adequate traffic isolation, i.e., no background noise/traffic is captured from your host
  - Docker makes is easy to run several instances in parallel to generate the desired amount of traffic as soon as possible
- - the PCAP files are only temporarily stored (due to their size) and decrypted straightaway (using the SSL) keys to parse them, and make a lightweight CSV representation of them
+ - the PCAP files are only temporarily stored (due to their size) and decrypted straightaway (using the SSL keys) to preprocess them, and make a lightweight CSV representation instead
  - at the end, you will have the decrypted traffic as CSV file including all necessary packet header and payload data that you can fed into a Machine learning/Deep learning application 
 
 ## Relevant application and base docker version information
