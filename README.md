@@ -39,15 +39,6 @@ sudo docker build -t cslev/webtraffic_generator:latest -f Dockerfile  .
 ```
 In the last command `-t` specifies the tag (default `latest`) used for our image! Feel free to use another tag, but to be sync with a possible future update might be coming from
 
-### ARM 64
-In case you want to build the container for your ARM-64 environment, the steps are the same just use a different `Dockerfile`
-```
-git clone https://github.com/cslev/webtraffic_generator
-cd webtraffic_generator
-sudo docker build -t cslev/webtraffic_generator:aarch64 -f Dockerfile.aarch64  .
-```
-
-
 
 ## Requirements
 
