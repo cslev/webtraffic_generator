@@ -81,8 +81,8 @@ RUN apt-get update && \
     rm -rf firefox-109.0.tar.bz2 && \
     rm -rf geckodriver-v0.32.0-linux64.tar.gz && \
     chmod +x geckodriver && \
-    chmod +x quic_doh_capture.py && \
-    chmod +x start_quic_doh_capture.sh && \
+    chmod +x wt_gen_and_capture.py && \
+    chmod +x start_wt_gen.sh && \
     cp geckodriver /usr/bin && \
     mkdir -p /usr/lib/firefox && \
     ln -s /webtraffic_gen/firefox/firefox /usr/lib/firefox/firefox && \
