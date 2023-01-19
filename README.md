@@ -2,6 +2,16 @@
 This repository can generate **(encrypted) WEB (TCP+TLC, QUIC)** and **DNS (DoH) traffic** in an isolated environment for 
 encrypted **webtraffic analysis**.
 
+# What it does
+ - A webbrowser (Firefox) is started within a Docker container and instructed to visit the most popular web sites
+ - Firefox can be configured to use different encrypted protocols, e.g., QUIC, TCP, encrypted DNS (DNS-over-HTTPS)
+ - For DoH, one can configure several different DoH resolver to use
+ - The encrypted traffic (along with the SSL keys to decrypt it) is captured within the container
+ - The container provides adequate traffic isolation, i.e., no background noise/traffic is captured from your host.
+ - Docker makes is easy to run several instances in parallel to generate the desired amount of traffic as soon as possible
+ - the PCAP files are only temporarily stored (due to their size) and decrypted straightaway (using the SSL) keys to parse them, and make a lightweight CSV representation of them
+ - at the end, you will have the decrypted traffic as CSV file including all necessary packet header and payload data that you can fed into a Machine learning/Deep learning application 
+
 # Requirements
 Being a docker container, you have to have a running docker subsystem installed. If you have no such subsystem, first, go to [https://docs.docker.com/install/linux/docker-ce/debian/](https://docs.docker.com/install/linux/docker-ce/debian/), pick your distribution on the left hand side, and follow the instructions to install it.
 
