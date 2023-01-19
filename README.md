@@ -8,6 +8,7 @@ encrypted **webtraffic analysis**.
  - For DoH, one can configure several different DoH resolver to use
  - The encrypted traffic (along with the SSL keys to decrypt it) is captured within the container
  - The container provides adequate traffic isolation, i.e., no background noise/traffic is captured from your host
+ - TCP Segmentation Offload can be disabled (if your host also supports), thereby you will have MTU sized packets only in the trace (just like an intermediate node/attacker would see your traffic when eavesdropping)
  - Docker makes is easy to run several instances in parallel to generate the desired amount of traffic as soon as possible
  - the PCAP files are only temporarily stored (due to their size) and decrypted straightaway (using the SSL keys) to preprocess them, and make a lightweight CSV representation instead
  - at the end, you will have the decrypted traffic as CSV file including all necessary packet header and payload data that you can fed into a Machine learning/Deep learning application 
