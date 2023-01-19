@@ -6,7 +6,7 @@ encrypted **webtraffic analysis**.
  - A webbrowser (Firefox) is started within a Docker container and instructed to visit the most popular web sites
  - Firefox can be configured to use different encrypted protocols, e.g., QUIC, TCP, encrypted DNS (DNS-over-HTTPS)
  - For DoH, one can configure several different DoH resolver to use
- - The encrypted traffic (along with the SSL keys to decrypt it) is captured within the container
+ - The encrypted traffic (along with the SSL keys to decrypt it) is captured within the container (only the relevant packets: HTTP1/2/3,DNS,UDP,TLS,QUIC,DoH, but no pure TCP, e.g, no TCP SYN,SYN/ACK,ACK)
  - The container provides adequate traffic isolation, i.e., no background noise/traffic is captured from your host
  - TCP Segmentation Offload can be disabled (if your host also supports), thereby you will have MTU sized packets only in the trace (just like an intermediate node/attacker would see your traffic when eavesdropping)
  - Docker makes is easy to run several instances in parallel to generate the desired amount of traffic as soon as possible
