@@ -273,6 +273,7 @@ else:
 if quic:
     profile.set_preference("network.http.http3.enable_0rtt", True)
     profile.set_preference("network.http.http3.enable", True)
+    profile.set_preference("network.http.http3.priorty", True)
 
     # options.set_preference("network.http.http3.enable_0rtt", True)
     # options.set_preference("network.http.http3.enabled", True)
