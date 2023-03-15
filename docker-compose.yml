@@ -1,16 +1,16 @@
 version: '3.6'
 
 services:
-  quic1:
+  wtg:
     image: 'cslev/webtraffic_generator:latest' #latest is amd64/intelx86_64, aarch64 is for ARM 64-bit
     container_name: wtg  #rename according to you scenario for easier identification
 
     volumes:
       #proper timing within the host system
       - '/etc/localtime:/etc/localtime:ro'
-      - './container_data/WEBTRAFFIC_GEN/archives:/webtraffic_gen/archives:rw'
+      - './container_data/WEBTRAFFIC_GEN_DoH_${R1}/archives:/webtraffic_gen/archives:rw'
       #for PCAP files - default they are deleted due to storage concerns - set it below to keep them
-      - './container_data/WEBTRAFFIC_GEN/pcap:/webtraffic_gen/pcap:rw'
+      - './container_data/WEBTRAFFIC_GEN_DoH_${R1}/pcap:/webtraffic_gen/pcap:rw'
       #for any additional domain lists, please add yours into ./source/domain_lists and refer to it via QUIC_DOH_DOCKER_DOMAIN_LIST later
       - './source/domain_lists:/webtraffic_gen/domain_lists:ro'
 
@@ -18,7 +18,7 @@ services:
     shm_size: '4g'
 
     environment:
-      QUIC_DOH_DOCKER_NAME: 'WTG'  #should be same as container_name
+      QUIC_DOH_DOCKER_NAME: 'WTG_DoH_${R1}'  #should be same as container_name
       QUIC_DOH_DOCKER_RESOLVER: ${R1} # resolver to use
       QUIC_DOH_DOCKER_START: '1' #first domain to visit in the domain list
       QUIC_DOH_DOCKER_END: '1' #last domain to visit in the domain list
